@@ -1,7 +1,7 @@
 module.exports = {
     fizzBuzz : function (num){
     if (num % 3 === 0 && num % 5 === 0) {
-      return " FizzBuzz";
+      return "FizzBuzz";
     } 
     else if(num % 3 === 0){
       return "Fizz";
@@ -9,7 +9,7 @@ module.exports = {
     else if(num % 5 === 0) {
       return "Buzz";
     }
-    else if (num % 3 !== 0 && num % 5 !== 0) {
+    else {
       return num;
     }
   },
@@ -18,6 +18,8 @@ module.exports = {
     var result = [];
     var min = arr[0];
     var max = arr[0];
+
+
 
     for(var i = 0; i <= arr.length; i++){
         if (arr[i] < min){
@@ -31,11 +33,18 @@ module.exports = {
             max = arr[i];
         }
     }
-    result.push([max]);
+    if (max == min){
+        return result
+    }
+    else {
+        result.push(max);
+    }
+
+    return result;
   },
 
   aritGeo : function (arr) {
-    if (arr === []) {
+    if (arr.length == 0) {
         return 0;
     }
     
@@ -45,13 +54,15 @@ module.exports = {
     var arit = true;
     var geo = true;
 
-    for(var i = 0; i <= arr.length; i++){
+    for(var i = 0; i < arr.length - 1; i++){
         if (arr[i + 1] - arr[i] !== aritDiff) {
             arit = false;
         }
-        else if (arr[i + 1] / geoRatio !== arr[i]) {
-            geo =false;
+        if (arr[i + 1] / geoRatio !== arr[i]) {
+        // else if (arr[i + 1] / arr[i] !== geoRatio) {
+            geo = false;
         }
+    }
 
         if (arit === true) {
             return "Arithmetic";
@@ -62,6 +73,4 @@ module.exports = {
             return -1;
         }
     }
-  }
-
 }
