@@ -25,19 +25,16 @@ module.exports = {
         if (arr[i] < min){
             min = arr[i];
         }
-    }
-    result.push(min);
-
-    for(var i = 0; i <= arr.length; i++){
-        if(arr[i] > max){
-            max = arr[i];
+        if (arr[i] > max){
+          max = arr[i];
         }
     }
+    
     if (max == min){
-        return result
+        result.push(min);
     }
     else {
-        result.push(max);
+        result.push(min, max);
     }
 
     return result;
@@ -59,7 +56,6 @@ module.exports = {
             arit = false;
         }
         if (arr[i + 1] / geoRatio !== arr[i]) {
-        // else if (arr[i + 1] / arr[i] !== geoRatio) {
             geo = false;
         }
     }
