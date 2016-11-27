@@ -1,15 +1,19 @@
 module.exports = {
     fizzBuzz : function (num){
-    if (num % 3 === 0 && num % 5 === 0) {
-      return "FizzBuzz";
-    } 
-    else if(num % 3 === 0){
-      return "Fizz";
-    }
-    else if(num % 5 === 0) {
-      return "Buzz";
-    }
-    else {
+   switch (0) {
+      case (num % 3 || num % 5):
+        return "FizzBuzz";
+        break;
+        
+      case (num % 3):
+        return "Fizz";
+        break;
+          
+      case (num % 5):
+        return "Buzz";
+        break;
+            
+      default:
       return num;
     }
   },
@@ -55,7 +59,7 @@ module.exports = {
         if (arr[i + 1] - arr[i] !== aritDiff) {
             arit = false;
         }
-        if (arr[i + 1] / geoRatio !== arr[i]) {
+        if (arr[i + 1] / geoRatio !== arr[i]) {       9
             geo = false;
         }
     }
